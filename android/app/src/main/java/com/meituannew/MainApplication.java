@@ -9,11 +9,6 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.swmansion.reanimated.ReanimatedPackage;
-import com.swmansion.rnscreens.RNScreensPackage;
-import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
-
-import org.reactnative.maskedview.RNCMaskedViewPackage;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;

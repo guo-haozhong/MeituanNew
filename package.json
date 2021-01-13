@@ -29,6 +29,7 @@
     "react-native-webview": "^5.12.1",
     "react-navigation": "^4.4.3",
     "react-navigation-stack": "^2.10.2",
+    "react-native-tab-view": "^2.15.2",
     "react-redux": "5.1.1",
     "redux": "4.0.1",
     "redux-logger": "3.0.6",
