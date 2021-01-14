@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import { createAppContainer,createSwitchNavigator} from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+
 //TabBottom页面
 import { HomeScreen } from './page/home'
 import { GoodsScreen } from './page/goods'
@@ -10,8 +12,10 @@ import { MessageScreen } from './page/message'
 import { MineScreen } from './page/mine'
 //其他页面
 import { ModalScreen } from './page/others/modal/ModalScreen'
-
-import {MyCustomTaBar} from './router/tabbar'
+import { DrawerScreen } from './page/others/drawer'
+import { DrawerBScreen } from './page/others/drawer/drawerB'
+//自定义TabBar
+import { MyCustomTaBar } from './router/tabbar'
 import { colors } from './common/theme/color';
 import { Images } from './image';
 
@@ -22,9 +26,9 @@ const TabNavigator = createBottomTabNavigator({
     Goods: {
         screen: GoodsScreen,
     },
-    // Message: {
-    //     screen: MessageScreen,
-    // },
+    Message: {
+        screen: MessageScreen,
+    },
     Mine: {
         screen: MineScreen,
     }
@@ -52,8 +56,7 @@ const TabNavigator = createBottomTabNavigator({
         initialRouteName: 'Home',
         activeTintColor: colors.activeTintColor,
         inactiveTintColor: colors.inactiveTintColor,
-    },
-
+    }
 });
 const AppNavigator = createStackNavigator({
     Main: {
@@ -61,13 +64,35 @@ const AppNavigator = createStackNavigator({
     },
     MyModal: {
         screen: ModalScreen,
-    },
+    }
 }, {
     mode: 'modal',
     headerMode: 'none',
 });
- 
-const AppContainer = createAppContainer(AppNavigator);
+
+const DrawerNavigator = createDrawerNavigator({
+    Main: {
+        screen: AppNavigator,
+    },
+    drawerA: {
+        screen:DrawerScreen
+    },
+    drawerB: {
+        screen:DrawerBScreen
+    },
+}, {
+    order: [ 'Main','drawerA', 'drawerB'],//routeNames数组，用于定义抽屉项目的顺序
+    initialRouteName: 'Main',
+    drawerType:'front',
+    drawerLockMode: 'unlocked',//设置是否响应手势
+    drawerWidth: 250, //抽屉的宽度或返回的功能。
+    drawerPosition: 'left', //选项是left或right。默认是left位置。
+    useNativeAnimations: true, //启用原生动画。默认是true。
+    drawerBackgroundColor: colors.theme, //使用抽屉背景获取某种颜色。默认是white
+    contentComponent:(props)=>(<DrawerBScreen {...props}/>)
+});
+
+const AppContainer = createAppContainer(DrawerNavigator);
 
 export default class App extends Component {
     render() {
