@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
+import { Button, Header, SearchBar, Tooltip } from 'react-native-elements';
+import { HomeHeader } from './component'
+import screenUtils from '../../common/utils/screenUtil';
 export class HomeScreen extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
@@ -17,13 +20,17 @@ export class HomeScreen extends Component {
     };
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <StatusBarCommon barStyle={"dark-content"} backgroundColor={colors.theme} />
-                <Text>Home Screen</Text>
-                <Button
-                    title="Go to Goods"
-                    onPress={() => this.props.navigation.openDrawer()}
-                />
+            <View style={{ flex: 1 }}>
+                {/* <StatusBarCommon barStyle={"dark-content"} /> */}
+                <ScrollView>
+                    <View style={{
+                        backgroundColor: colors.theme, height: 200,
+                        width: screenUtils.SCREEN_WIDTH
+                    }}>
+                        <HomeHeader />
+                    </View>
+
+                </ScrollView>
             </View>
         );
     }

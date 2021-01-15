@@ -1146,6 +1146,11 @@
   resolved "https://registry.npm.taobao.org/@react-native-community/masked-view/download/@react-native-community/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
   integrity sha1-XdpkPhnlh3k7wgNN2b9zmK1D1AE=
 
+"@react-native-community/toolbar-android@^0.1.0-rc.2":
+  version "0.1.0-rc.2"
+  resolved "https://registry.npm.taobao.org/@react-native-community/toolbar-android/download/@react-native-community/toolbar-android-0.1.0-rc.2.tgz#86cae655836afacc52d4063062cc59837d1a8640"
+  integrity sha1-hsrmVYNq+sxS1AYwYsxZg30ahkA=
+
 "@react-navigation/core@^3.7.9":
   version "3.7.9"
   resolved "https://registry.npm.taobao.org/@react-navigation/core/download/@react-navigation/core-3.7.9.tgz#3f7ba0fcb6c8d74a77a057382af198d84c7c4e3b"
@@ -5915,6 +5920,11 @@ react-native-swiper@^1.5.14:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-tab-view@^2.15.2:
+  version "2.15.2"
+  resolved "https://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-2.15.2.tgz?cache=0&sync_timestamp=1602059290475&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native-tab-view%2Fdownload%2Freact-native-tab-view-2.15.2.tgz#4bc7832d33a119306614efee667509672a7ee64e"
+  integrity sha1-S8eDLTOhGTBmFO/uZnUJZyp+5k4=
+
 react-native-vector-icons@^6.6.0:
   version "6.7.0"
   resolved "https://registry.npm.taobao.org/react-native-vector-icons/download/react-native-vector-icons-6.7.0.tgz#8871ba52ef8e98878ba7a932847f96b6dfc1c137"
@@ -5964,6 +5974,11 @@ react-native@0.63.4:
     stacktrace-parser "^0.1.3"
     use-subscription "^1.0.0"
     whatwg-fetch "^3.0.0"
+
+react-navigation-drawer@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/react-navigation-drawer/download/react-navigation-drawer-2.6.0.tgz#9f04ca26d074891af73d898bb9587a5e7aa879da"
+  integrity sha1-nwTKJtB0iRr3PYmLuVh6Xnqoedo=
 
 react-navigation-stack@^2.10.2:
   version "2.10.2"
