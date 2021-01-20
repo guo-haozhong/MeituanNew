@@ -8,7 +8,10 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "jetifier -r"
+    "postinstall": "jetifier -r",
+    "jetify": "npx jetify ",
+    "bundle-android": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform android --dev false --bundle-output ./android/app/src/main/assets/index.android.jsbundle --assets-dest  ./android/app/src/main/assets/",
+    "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -19,6 +22,7 @@
     "react-native-easy-app": "^1.7.20",
     "react-native-elements": "^3.1.0",
     "react-native-gesture-handler": "^1.0.12",
+    "react-native-modals": "^0.22.3",
     "react-native-permissions": "^1.2.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",

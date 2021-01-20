@@ -5,7 +5,7 @@ const scale = Dimensions.get('window').width / 750
 
 const screenUtils = {
     // iOS系统
-    iOS: Platform.OS === 'ios',
+    IOS: Platform.OS === 'ios',
     // Android系统
     Android: Platform.OS === 'android',
     // 屏幕宽度

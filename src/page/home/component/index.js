@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { Component, useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StatusBarCommon } from '../../../common/component/statusbar'
 import { colors } from '../../../common/theme/color';
 import { Button, Image, Header, SearchBar, Tooltip } from 'react-native-elements';
 import { Images } from '../../../image';
-import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
+//首页-头部
 const HomeHeader = class extends Component {
     render() {
         return (
@@ -39,6 +39,7 @@ const CenterComponent = class extends Component {
     };
 
     updateSearch = (search) => {
+        console.log('搜索==' + search);
         this.setState({ search });
     };
     render() {
@@ -60,7 +61,8 @@ const CenterComponent = class extends Component {
                 inputStyle={{
                     fontSize: 12,
                     padding: 0,
-                    margin: 0
+                    margin: 0,
+                    left:-10
                 }}
                 onChangeText={this.updateSearch}
                 value={search}
@@ -69,6 +71,11 @@ const CenterComponent = class extends Component {
     }
 }
 const RightComponent = class extends Component {
+    constructor(props) {
+        super(props);
+        this.tooltipRef = React.createRef();//v17 新写法
+    }
+
     render() {
         const arr = [
             {
@@ -87,6 +94,7 @@ const RightComponent = class extends Component {
                 <Image source={Images.home.ic_yuyin}
                     style={{ width: 25, height: 25, marginHorizontal: 10 }} />
                 <Tooltip
+                    ref={this.tooltipRef}
                     backgroundColor={colors.gray}
                     containerStyle={{ borderRadius: 5, height: 100 }}
                     overlayColor={'transparent'}
@@ -96,13 +104,18 @@ const RightComponent = class extends Component {
                             {
                                 arr.map((item, index) => {
                                     return (
-                                        <View style={{ flex: 1, flexDirection: 'column' }} key={index}>
+                                        <TouchableOpacity
+                                            style={{ flex: 1, flexDirection: 'column' }} key={index}
+                                            onPress={() => {
+                                                alert(item.name)
+                                                this.tooltipRef && this.tooltipRef.current.toggleTooltip();
+                                            }}>
                                             <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'center', alignItems: 'center', width: 120 }}>
                                                 <Image source={item.icon} style={{ width: 20, height: 20 }} />
                                                 <Text style={[styles.text_white, { marginLeft: 10 }]}>{item.name}</Text>
                                             </View>
                                             {item.isline ? (<View style={styles.line_white}></View>) : null}
-                                        </View>
+                                        </TouchableOpacity>
                                     )
                                 })
                             }
