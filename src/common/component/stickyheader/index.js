@@ -46,8 +46,7 @@ export default class StickyHeader extends Component {
           style,
           styles.container,
           { transform: [{ translateY }] }
-        ]
-        }
+        ]}
       >
         {children}
       </Animated.View>

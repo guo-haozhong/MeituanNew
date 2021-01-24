@@ -7,8 +7,8 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 
 //TabBottom页面
 import { HomeScreen } from './page/home'
-import { GoodsScreen } from './page/goods'
 import { MessageScreen } from './page/message'
+import { GoodsScreen } from './page/goods'
 import { MineScreen } from './page/mine'
 //其他页面
 import { ModalScreen } from './page/others/modal/ModalScreen'
@@ -85,7 +85,7 @@ const DrawerNavigator = createDrawerNavigator({
     initialRouteName: 'Main',
     drawerType:'front',
     drawerLockMode: 'unlocked',//设置是否响应手势
-    drawerWidth: 250, //抽屉的宽度或返回的功能。
+    drawerWidth: 250, //抽屉的宽度
     drawerPosition: 'left', //选项是left或right。默认是left位置。
     useNativeAnimations: true, //启用原生动画。默认是true。
     drawerBackgroundColor: colors.theme, //使用抽屉背景获取某种颜色。默认是white

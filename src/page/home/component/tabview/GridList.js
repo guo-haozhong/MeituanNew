@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {
     View, Text, StyleSheet, FlatList,
-    TouchableOpacity, Image
+    TouchableOpacity, TouchableWithoutFeedback
 } from 'react-native';
 import { colors } from '../../../../common/theme/color';
 import screenUtils from '../../../../common/utils/screenUtil';
 import { Images } from '../../../../image';
+
+import {Image} from 'react-native-elements'
 
 export function GridList(props) {
     // console.log(props.route);
@@ -28,14 +30,16 @@ export function GridList(props) {
     }, [])
     const renderItem = ({ item, index }) => {
         return (
-            <TouchableOpacity style={styles.likeItem} key={item.id}>
-                <Image source={Images.home.icon_banner1} style={styles.likeImg} />
-                <Text style={styles.likeDesc} numberOfLines={1}>{item.describe}</Text>
-                <View style={{ marginLeft: 5 }}>
-                    <Text style={styles.likeTitle} numberOfLines={2}>{item.title}</Text>
-                    <Text style={styles.likePrice}>￥{item.price}</Text>
+            <TouchableWithoutFeedback key={item.id}>
+                <View style={styles.likeItem}>
+                    <Image source={Images.home.icon_banner1} style={styles.likeImg} />
+                    <Text style={styles.likeDesc} numberOfLines={1}>{item.describe}</Text>
+                    <View style={{ marginLeft: 5 }}>
+                        <Text style={styles.likeTitle} numberOfLines={2}>{item.title}</Text>
+                        <Text style={styles.likePrice}>￥{item.price}</Text>
+                    </View>
                 </View>
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
         )
     }
     return (
@@ -88,6 +92,6 @@ const styles = StyleSheet.create({
     },
     likePrice: {
         fontSize: 14,
-        color: '#b4282d',
+        color: 'red',
     }
 })

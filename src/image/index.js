@@ -41,5 +41,8 @@ export const Images = {
         ic_home_8: require('./home/ic_home_8.png'),
         ic_home_9: require('./home/ic_home_9.png'),
         ic_home_10: require('./home/ic_home_10.png'),
+    },
+    good:{
+        ic_arrow_right:require('./good/ic_arrow_right.png'),
     }
 }

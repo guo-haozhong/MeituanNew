@@ -5,7 +5,7 @@ import {
     RefreshControl, FlatList
 } from 'react-native';
 //file
-import { StatusBarCommon } from '../../common/component/statusbar'
+// import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
 import { HomeHeader } from './component'
 import screenUtils from '../../common/utils/screenUtil';
@@ -114,7 +114,7 @@ export class HomeScreen extends Component {
                 <Animated.FlatList
                     data={[]}
                     refreshControl={
-                        <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} colors={[colors.theme]} />
+                        <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} colors={colors.refreshColor} />
                     }
                     onScroll={Animated.event([{
                         nativeEvent: { contentOffset: { y: this.state.scrollY, } }

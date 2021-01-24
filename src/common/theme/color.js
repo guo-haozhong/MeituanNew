@@ -1,13 +1,14 @@
-export const colors={
-    theme:"#FBC41D",
-    bgColorf5:'#f5f5f5',
-    bgColorfa:'#f8f8f8',
-    activeTintColor:'#FBC41D',
-    inactiveTintColor:'#333',
-    textColor666:'#6666',
-    textColor:'#1E2153',
-    gray:'gray',
-    dotunsel:'#e5e5e5',
+export const colors = {
+    theme: "#FBC41D",
+    bgColorf5: '#f5f5f5',
+    bgColorfa: '#f8f8f8',
+    activeTintColor: '#FBC41D',
+    inactiveTintColor: '#333',
+    textColor666: '#6666',
+    textColor: '#1E2153',
+    gray: 'gray',
+    dotunsel: '#e5e5e5',
+    refreshColor:['#FF0000','#FF7F00','#FFFF00','#00FF00','#00FFFF','#0000FF','#8B00FF'],
     bg: {
         backgroundColor: '#fff',
         marginHorizontal: 15,
@@ -20,4 +21,8 @@ export const colors={
         borderWidth: 0.5,
         borderColor: '#E5E5E5'
     },
+    textStyleWhite: {
+        color: '#fff',
+        fontSize: 12
+    }
 }
