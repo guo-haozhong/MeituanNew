@@ -17,7 +17,8 @@ const screenUtils = {
     // iPhone 12,mini,pro,pro max
     isIphone12: (Platform.OS === 'ios' && (Dimensions.get('window').height == '780' || Dimensions.get('window').height == '844' ||Dimensions.get('window').height == '926')),
     // 屏幕尺寸缩放适配
-    pxToDp: size => Math.round(size * scale) <= 1 ? 1 : Math.round(size * scale)
+    pxToDp: size => Math.round(size * scale) <= 1 ? 1 : Math.round(size * scale),
+    isFullAndroid: Dimensions.get('window').height/Dimensions.get('window').width >= 1.97
 }
 
 export default screenUtils

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import { colors } from '../../../common/theme/color';
-import screenUtils from '../../../common/utils/screenUtil';
 import { Images } from '../../../image';
 //插件库
 import Swiper from 'react-native-swiper'
@@ -73,11 +72,11 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         // alignItems: 'center',
         // justifyContent:'center',
-        width: screenUtils.SCREEN_WIDTH,
+        width: SCREEN_WIDTH,
         height: 80,
     },
     commonItemView: {
-        width: (screenUtils.SCREEN_WIDTH - 30) / 4,
+        width: (SCREEN_WIDTH - 30) / 4,
         marginTop: 10,
         alignItems: 'center',
         justifyContent: "center",
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'center',
-        width: screenUtils.SCREEN_WIDTH,
+        width: SCREEN_WIDTH,
         marginTop: 15
     },
 })

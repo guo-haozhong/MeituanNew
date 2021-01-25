@@ -4,7 +4,6 @@ import {
     FlatList, TouchableWithoutFeedback
 } from 'react-native';
 import { colors } from '../../../common/theme/color';
-import screenUtils from '../../../common/utils/screenUtil';
 import { Image } from 'react-native-elements'
 import { Images } from '../../../image';
 

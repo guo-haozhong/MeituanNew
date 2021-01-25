@@ -8,7 +8,6 @@ import {
 // import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
 import { HomeHeader } from './component'
-import screenUtils from '../../common/utils/screenUtil';
 import { Images } from '../../image';
 import { FourView, SwiperView } from './component/HookView'
 import { FirstRoute } from './component/tabview/FirstRoute'
@@ -126,14 +125,14 @@ export class HomeScreen extends Component {
                         <View>
                             <View style={{
                                 backgroundColor: colors.theme,
-                                width: screenUtils.SCREEN_WIDTH
+                                width: SCREEN_WIDTH
                             }}>
                                 <FourView data={iconArr} />
                             </View>
                             <SwiperView data={pageArr} />
                             <Animated.View style={{
                                 flex: 1,
-                                width: screenUtils.SCREEN_WIDTH,
+                                width: SCREEN_WIDTH,
                                 // backgroundColor: "#fff",
                             }}>
                                 <TabView
@@ -147,11 +146,11 @@ export class HomeScreen extends Component {
                                             stickyScrollY={this.state.scrollY} >
                                             <View style={{ flexDirection: "row", backgroundColor: tabColor }}>
                                                 <TabBar {...props}
-                                                    tabStyle={{ width: (screenUtils.SCREEN_WIDTH) / 3 }}
+                                                    tabStyle={{ width: (SCREEN_WIDTH) / 3 }}
                                                     indicatorStyle={styles.indicatorStyle}
                                                     style={{ backgroundColor: 'transparent', justifyContent: 'center', flex: 1 }}
                                                     renderLabel={({ route, focused, }) => (
-                                                        <View style={{ width: (screenUtils.SCREEN_WIDTH) / 3, alignItems: 'center', justifyContent: 'center' }}>
+                                                        <View style={{ width: (SCREEN_WIDTH) / 3, alignItems: 'center', justifyContent: 'center' }}>
                                                             <Text style={focused ? styles.focusedText : styles.unFocusedText}>{route.title}</Text>
                                                         </View>
                                                     )}
@@ -181,7 +180,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 3,
         borderRadius: 1.5,
-        marginLeft: (screenUtils.SCREEN_WIDTH / 3 - 40) / 2
+        marginLeft: (SCREEN_WIDTH / 3 - 40) / 2
     },
     focusedText: {
         color: colors.activeTintColor,

@@ -49,7 +49,7 @@ const TabNavigator = createBottomTabNavigator({
             } else if (routeName === 'Mine') {
                 icon = focused ? Images.tab.mine_sel : Images.tab.mine
             }
-            return <Image source={icon} />
+            return <Image source={icon} style={{width:24,height:24}}/>
         },
     }),
     tabBarOptions: {

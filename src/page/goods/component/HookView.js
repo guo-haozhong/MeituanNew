@@ -4,7 +4,6 @@ import {
     ImageBackground
 } from 'react-native';
 import { colors } from '../../../common/theme/color';
-import screenUtils from '../../../common/utils/screenUtil';
 import { Images } from '../../../image';
 //插件库
 import Swiper from 'react-native-swiper'
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
     contain: {
         top: -90,
         backgroundColor: '#fff',
-        width: screenUtils.SCREEN_WIDTH - 30,
+        width: SCREEN_WIDTH - 30,
         left: 15,
         height: 205,
         borderRadius: 8
@@ -118,15 +117,15 @@ const styles = StyleSheet.create({
     },
     itemroot: {
         alignItems: "center",
-        width: (screenUtils.SCREEN_WIDTH - 40) / 4,
+        width: (SCREEN_WIDTH - 40) / 4,
         marginLeft: 15,
         height: 170,
         backgroundColor: '#fff',
         borderRadius: 8,
     },
     img: {
-        width: screenUtils.SCREEN_WIDTH / 4,
-        height: screenUtils.SCREEN_WIDTH / 4,
+        width: SCREEN_WIDTH / 4,
+        height: SCREEN_WIDTH / 4,
     },
     pricebg: {
         backgroundColor: 'red',

@@ -3,7 +3,6 @@ import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native';
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 import { colors } from '../../common/theme/color';
-import screenUtils from '../../common/utils/screenUtil';
 import { Images } from '../../image';
 export class MyCustomTaBar extends Component {
 
@@ -18,7 +17,7 @@ export class MyCustomTaBar extends Component {
             }
         });
         return (
-            <ImageBackground style={{ width: screenUtils.SCREEN_WIDTH, height: 56 }}
+            <ImageBackground style={{ width: SCREEN_WIDTH, height: 56 }}
                 source={Images.tab.foot}>
                 <View style={{ flex: 1, flexDirection: 'row', }}>
                     {
@@ -72,7 +71,7 @@ const Item = class extends Component {
                 style={{
                     // flex: 1,
                     height:100,
-                    width: screenUtils.SCREEN_WIDTH / 3,
+                    width: SCREEN_WIDTH / 3,
                     justifyContent: 'center',
                     alignItems: 'center',
                     top:-30, 
@@ -95,7 +94,7 @@ const Item = class extends Component {
                 onPress={() => { this.gotoRoute(routeName) }}
                 style={{
                     flex: 1,
-                    width: screenUtils.SCREEN_WIDTH / 3,
+                    width: SCREEN_WIDTH / 3,
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>

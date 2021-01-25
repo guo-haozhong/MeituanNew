@@ -4,8 +4,6 @@ import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
 import { Image, Header } from 'react-native-elements';
 import { Images } from '../../image';
-import screenUtils from '../../common/utils/screenUtil';
-
 export class MessageScreen extends Component {
     static navigationOptions = ({ navigation }) => {
         return {

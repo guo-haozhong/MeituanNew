@@ -7,7 +7,6 @@ import {
 //file
 import { colors } from '../../common/theme/color';
 import { GoodHeader } from './component'
-import screenUtils from '../../common/utils/screenUtil';
 import { Images } from '../../image';
 import StickyHeader from '../../common/component/stickyheader'
 import { ListView } from './tabview/ListView'
@@ -99,7 +98,7 @@ export class GoodsScreen extends Component {
 
                             <Animated.View style={{
                                 flex: 1,
-                                width: screenUtils.SCREEN_WIDTH,
+                                width: SCREEN_WIDTH,
                                 top: -90
                             }}>
                                 {scenes && <TabView
@@ -114,11 +113,11 @@ export class GoodsScreen extends Component {
                                                 <TabBar {...props}
                                                     scrollEnabled={true} //设置可拖动
                                                     pressColor={'gray'}
-                                                    tabStyle={{ width: (screenUtils.SCREEN_WIDTH) / 4, height: 54 }}
+                                                    tabStyle={{ width: (SCREEN_WIDTH) / 4, height: 54 }}
                                                     // indicatorStyle={styles.indicatorStyle}
                                                     style={{ backgroundColor: 'transparent', flex: 1 }}
                                                     renderLabel={({ route, focused }) => (
-                                                        <View style={{ width: screenUtils.SCREEN_WIDTH / 4, alignItems: 'center', justifyContent: 'center', height: 54, }}>
+                                                        <View style={{ width: SCREEN_WIDTH / 4, alignItems: 'center', justifyContent: 'center', height: 54, }}>
                                                             <Text style={focused ? styles.focusedText : styles.unFocusedText}>{route.title}</Text>
                                                             {focused ? (<View style={styles.indicatorView}>
                                                                 <Text style={styles.text333}>{route.cost != '全国包邮' ? '¥' + route.cost + '起' : route.cost}</Text>
@@ -160,15 +159,15 @@ const styles = StyleSheet.create({
         width: 30,
         height: 3,
         borderRadius: 1.5,
-        marginLeft: (screenUtils.SCREEN_WIDTH / 4 - 30) / 2
+        marginLeft: (SCREEN_WIDTH / 4 - 30) / 2
     },
     focusedText: {
-        color: colors.inactiveTintColor,
+        color: colors.textColor333,
         fontSize: 18,
         fontWeight: 'bold'
     },
     unFocusedText: {
-        color: colors.inactiveTintColor,
+        color: colors.textColor333,
         fontSize: 16,
         // fontWeight: 'bold'
     },

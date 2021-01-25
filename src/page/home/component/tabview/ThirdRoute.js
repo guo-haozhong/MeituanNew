@@ -3,7 +3,6 @@ import {
     View, Text, StyleSheet
 } from 'react-native';
 import { colors } from '../../../../common/theme/color';
-import screenUtils from '../../../../common/utils/screenUtil';
 import { GridList } from './GridList'
 export function ThirdRoute(props) {
     console.log(props.route);
@@ -16,7 +15,7 @@ export function ThirdRoute(props) {
 }
 const styles = StyleSheet.create({
     contain: {
-        width: screenUtils.SCREEN_WIDTH,
+        width: SCREEN_WIDTH,
         alignItems: 'center',
         backgroundColor: colors.bgColorfa,
         paddingBottom: 10,

@@ -4,7 +4,6 @@ import {
     TouchableOpacity, TouchableWithoutFeedback
 } from 'react-native';
 import { colors } from '../../../../common/theme/color';
-import screenUtils from '../../../../common/utils/screenUtil';
 import { Images } from '../../../../image';
 
 import {Image} from 'react-native-elements'
@@ -54,7 +53,7 @@ export function GridList(props) {
 }
 const styles = StyleSheet.create({
     contain: {
-        width: screenUtils.SCREEN_WIDTH,
+        width: SCREEN_WIDTH,
         alignItems: 'center',
         backgroundColor: colors.bgColorfa,
         paddingBottom: 10,
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     likeItem: {
-        width: screenUtils.SCREEN_WIDTH / 2 - 20,
+        width: SCREEN_WIDTH / 2 - 20,
         marginLeft: 5,
         marginRight: 5,
         marginBottom: 15,
@@ -70,8 +69,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff"
     },
     likeImg: {
-        width: screenUtils.SCREEN_WIDTH / 2 - 20,
-        height: screenUtils.SCREEN_WIDTH / 2 - 20,
+        width: SCREEN_WIDTH / 2 - 20,
+        height: SCREEN_WIDTH / 2 - 20,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8
         // backgroundColor: '#f4f4f4'
