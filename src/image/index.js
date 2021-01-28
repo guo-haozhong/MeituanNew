@@ -22,7 +22,7 @@ export const Images = {
         ic_fk_black:require('./home/ic_fk_black.png'),
         ic_fk_white:require('./home/ic_fk_white.png'),
         ic_recharge:require('./home/ic_recharge.png'),
-        ic_tuijian:require('./home/ic_tuijian.png'),
+        ic_chuxing:require('./home/ic_chuxing.png'),
         ic_scan_black:require('./home/ic_scan_black.png'),
         ic_scan_white:require('./home/ic_scan_white.png'),
 
@@ -44,5 +44,27 @@ export const Images = {
     },
     good:{
         ic_arrow_right:require('./good/ic_arrow_right.png'),
+    },
+    mine:{
+        icon_head:require('./mine/icon_head.png'),
+
+        icon_mine1:require('./mine/icon_mine1.png'),
+        icon_mine2:require('./mine/icon_mine2.png'),
+        icon_mine3:require('./mine/icon_mine3.png'),
+        icon_mine4:require('./mine/icon_mine4.png'),
+        icon_mine5:require('./mine/icon_mine5.png'),
+        icon_mine6:require('./mine/icon_mine6.png'),
+        icon_mine7:require('./mine/icon_mine7.png'),
+
+        icon_game1:require('./mine/icon_game1.png'),
+        icon_game2:require('./mine/icon_game2.png'),
+        icon_game3:require('./mine/icon_game3.png'),
+
+        icon_h1:require('./mine/icon_h1.png'),
+        icon_h2:require('./mine/icon_h2.png'),
+        icon_h3:require('./mine/icon_h3.png'),
+        icon_h4:require('./mine/icon_h4.png'),
+
+        icon_tool2:require('./mine/icon_tool2.png'),
     }
 }

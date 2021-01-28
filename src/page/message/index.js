@@ -62,7 +62,7 @@ function ListView(props) {
 
                         <View style={{ flex: 1, marginHorizontal: 10 }}>
                             <Text style={styles.title}>{item.title}</Text>
-                            <Text numberOfLines={2} style={[styles.text, { paddingTop:10 }]}>{item.msg}</Text>
+                            <Text numberOfLines={2} style={[styles.text, { paddingTop: 10 }]}>{item.msg}</Text>
                         </View>
                         <View style={{ alignItems: "flex-end" }}>
                             <Text style={styles.text_666}>{item.time}</Text>
@@ -71,7 +71,9 @@ function ListView(props) {
                             </View>
                         </View>
                     </View>
-                    <View style={{height:1,backgroundColor: colors.bgColorfa,marginLeft:60,marginRight:20}}></View>
+                    <View style={{ backgroundColor: "#fff" }}>
+                        <View style={{ height: 1, backgroundColor: colors.bgColorfa, marginLeft: 60, marginRight: 20 }}></View>
+                    </View>
                 </View>
             </TouchableWithoutFeedback>
         )
@@ -87,7 +89,7 @@ function ListView(props) {
 const styles = StyleSheet.create({
     contain: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: colors.bgColorfa
     },
     item: {
         flexDirection: 'row',

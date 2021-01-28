@@ -5,10 +5,11 @@ import { Images } from '../../../image';
 //插件库
 import Swiper from 'react-native-swiper'
 import { Image } from 'react-native-elements';
-export function FourView(props) {
-    const { data } = props
+
+export function ColView(props) {
+    const { data, col, width, isLimitheight, height = 80 } = props
     return (
-        <View style={styles.flexwrap}>
+        <View style={[styles.flexwrap, isLimitheight ? { height } : {}]}>
             {data.map((item, index) => {
                 return (
                     <TouchableWithoutFeedback
@@ -16,7 +17,31 @@ export function FourView(props) {
                         onPress={() => {
 
                         }}>
-                        <View style={styles.commonItemView}>
+                        <View style={[styles.commonItemView, { width: width / col }]}>
+                            {item.isshowTip && <View style={styles.tipView}>
+                                <Text style={{ color: '#fff', fontSize: 10 }}>{item.tiptext}</Text>
+                            </View>}
+                            <Image source={item.icon} style={styles.defaultImage} />
+                            <Text style={styles.defaultItemText} numberOfLines={1}>{item.name}</Text>
+                        </View>
+                    </TouchableWithoutFeedback>
+                )
+            })}
+        </View>
+    )
+}
+export function FourView(props) {
+    const { data, col } = props
+    return (
+        <View style={[styles.flexwrap, { height: 80 }]}>
+            {data.map((item, index) => {
+                return (
+                    <TouchableWithoutFeedback
+                        key={index}
+                        onPress={() => {
+
+                        }}>
+                        <View style={[styles.commonItemView, { width: (SCREEN_WIDTH - 20) / col }]}>
                             <Image source={item.icon} style={styles.defaultImage} />
                             <Text style={styles.defaultItemText} numberOfLines={1}>{item.name}</Text>
                         </View>
@@ -33,7 +58,7 @@ export function SwiperView(props) {
             style={{
                 height: 230,
                 backgroundColor: colors.bgColorfa,
-                paddingHorizontal: 15,
+                paddingHorizontal: 10,
             }}
             paginationStyle={{ bottom: 5 }}
             loop={false}
@@ -50,7 +75,7 @@ export function SwiperView(props) {
                                         onPress={() => {
 
                                         }}>
-                                        <View style={styles.commonItemView}>
+                                        <View style={[styles.commonItemView, { width: (SCREEN_WIDTH - 20) / 4 }]}>
                                             <Image source={item.icon} style={{ width: 30, height: 30 }} />
                                             <Text style={styles.defaultItemText} numberOfLines={1}>{item.name}</Text>
                                         </View>
@@ -66,17 +91,13 @@ export function SwiperView(props) {
 }
 const styles = StyleSheet.create({
     flexwrap: {
-        backgroundColor: colors.theme,
-        paddingHorizontal: 15,
+        // backgroundColor: colors.theme,
+        paddingHorizontal: 10,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        // alignItems: 'center',
-        // justifyContent:'center',
         width: SCREEN_WIDTH,
-        height: 80,
     },
     commonItemView: {
-        width: (SCREEN_WIDTH - 30) / 4,
         marginTop: 10,
         alignItems: 'center',
         justifyContent: "center",
@@ -84,7 +105,7 @@ const styles = StyleSheet.create({
     defaultItemText: {
         paddingTop: 5,
         fontSize: 14,
-        color: colors.textColor
+        color: colors.textColor333
     },
     defaultImage: {
         width: 25, height: 25
@@ -96,4 +117,16 @@ const styles = StyleSheet.create({
         width: SCREEN_WIDTH,
         marginTop: 15
     },
+    tipView: {
+        backgroundColor: 'red',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 16, width: 28,
+        borderRadius: 8,
+        position: 'absolute',
+        top: -5,
+        left: 45,
+
+
+    }
 })

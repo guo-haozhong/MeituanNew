@@ -97,7 +97,7 @@ export class HomeScreen extends Component {
             { icon: Images.home.ic_scan_black, name: '扫一扫' },
             { icon: Images.home.ic_fk_black, name: '付款码' },
             { icon: Images.home.ic_recharge, name: '充值' },
-            { icon: Images.home.ic_tuijian, name: '推荐' }
+            { icon: Images.home.ic_chuxing, name: '出行' }
         ]
 
         const { index, routes, tabColor, refreshing } = this.state
@@ -127,7 +127,7 @@ export class HomeScreen extends Component {
                                 backgroundColor: colors.theme,
                                 width: SCREEN_WIDTH
                             }}>
-                                <FourView data={iconArr} />
+                                <FourView data={iconArr} col={4}/>
                             </View>
                             <SwiperView data={pageArr} />
                             <Animated.View style={{
