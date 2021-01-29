@@ -13,10 +13,10 @@ export function ListView(props) {
     useEffect(() => {
         //effect
         const initData = [
-            { icon: Images.home.icon_banner1, title: '【美团专供】开心果袋装干果零食1000g含罐坚果炒---大颗粒', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' },
-            { icon: Images.home.icon_banner2, title: '【美团专供】开心果袋装干果零食1000g含罐坚果炒---大颗粒', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' },
-            { icon: Images.home.icon_banner3, title: '【美团专供】开心果袋装干果零食1000g含罐坚果炒---大颗粒', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' },
-            { icon: Images.home.icon_banner4, title: '【美团专供】开心果袋装干果零食1000g含罐坚果炒---大颗粒', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' }
+            { icon: Images.home.icon_banner1, title: '【美团专供】鲜橙~天天吃水果！', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' },
+            { icon: Images.home.icon_banner2, title: '【美团专供】香蕉~天天吃水果！', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' },
+            { icon: Images.home.icon_banner3, title: '【美团专供】百事可乐~百事可乐~百事可乐~百事可乐~！', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' },
+            { icon: Images.home.icon_banner4, title: '【美团专供】樱桃~樱桃~樱桃~樱桃~樱桃~樱桃~樱桃~', desc: '七天无理由退换货', cost: '9.8', count: '8.9万' }
         ]
         setdata(initData.concat(initData))
         return () => {

@@ -75,7 +75,7 @@ export function SwiperView(props) {
                                         onPress={() => {
 
                                         }}>
-                                        <View style={[styles.commonItemView, { width: (SCREEN_WIDTH - 20) / 4 }]}>
+                                        <View style={[styles.commonItemView, { width: (SCREEN_WIDTH - 20) / 5 }]}>
                                             <Image source={item.icon} style={{ width: 30, height: 30 }} />
                                             <Text style={styles.defaultItemText} numberOfLines={1}>{item.name}</Text>
                                         </View>

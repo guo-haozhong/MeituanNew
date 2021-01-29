@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "postinstall": "jetifier -r",
-    "jetify": "npx jetify ",
+    "jetify": "npx jetify",
     "apk":"cd android && ./gradlew assembleRelease",
     "bundle-android": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform android --dev false --bundle-output ./android/app/src/main/assets/index.android.jsbundle --assets-dest  ./android/app/src/main/assets/",
     "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle"

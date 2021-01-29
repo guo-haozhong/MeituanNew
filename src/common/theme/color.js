@@ -4,6 +4,7 @@ export const colors = {
     bgColorfa: '#f8f8f8',
     activeTintColor: '#ffd102',
     inactiveTintColor: '#999',
+    textColor999: '#999',
     textColor666: '#666',
     textColor333:'#333',
     textColor: '#1E2153',

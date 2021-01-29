@@ -13,25 +13,13 @@ export function ScrollViewList(props) {
     const [data, setdata] = useState([])
     useEffect(() => {
         //effect
-        let initData = []
-        for (let i = 0; i < 10; i++) {
-            if (i % 2 == 0) {
-                initData.push({
-                    icon: Images.home.icon_banner2,
-                    title: '山东青瓜约250±50g',
-                    price: '0.99',
-                    count: '2万件'
-                })
-            } else {
-                initData.push({
-                    icon: Images.home.icon_banner3,
-                    title: '广府皇粮宫廷贡米5kg',
-                    price: '22.9',
-                    count: '5331件'
-                })
-            }
-        }
-        setdata(initData)
+        let initData = [
+            { icon: Images.home.icon_banner1, title: '鲜橙【水果店】', price: '19.9', count: '2000件' },
+            { icon: Images.home.icon_banner2, title: '新鲜香蕉约1000±50g', price: '9.9', count: '2万件' },
+            { icon: Images.home.icon_banner3, title: '百事可乐·百事可乐百·事可乐', price: '22.9', count: '5331件' },
+            { icon: Images.home.icon_banner4, title: '新鲜樱桃【水果店】', price: '29.9', count: '1万件' },
+        ]
+        setdata(initData.concat(initData))
         return () => {
             //cleanup
         }
@@ -48,7 +36,7 @@ export function ScrollViewList(props) {
                         flex: 1
                     }}>
                         <View style={styles.pricebg}>
-                            <Text style={[colors.textStyleWhite, { marginLeft: 5 }]}>￥{item.price}</Text>
+                            <Text style={[colors.textStyleWhite, { marginLeft: 5 }]}>¥{item.price}</Text>
                         </View>
                     </View>
                 </ImageBackground>
@@ -71,7 +59,7 @@ export function ScrollViewList(props) {
                         <Text style={{ fontSize: 12, color: '#333' }}>门店距您1.3km·次日自提</Text>
                     </View>
                 </View>
-                <View style={{ flexDirection: 'row',alignItems:'center' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Text style={{ fontSize: 12, color: '#333' }}>更多爆品</Text>
                     <Image source={Images.good.ic_arrow_right} style={{ width: 12, height: 12 }} />
                 </View>

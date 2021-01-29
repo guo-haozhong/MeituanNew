@@ -18,6 +18,7 @@ import { DrawerBScreen } from './page/others/drawer/drawerB'
 import { MyCustomTaBar } from './router/tabbar'
 import { colors } from './common/theme/color';
 import { Images } from './image';
+import { StatusBar } from 'react-native';
 
 const TabNavigator = createBottomTabNavigator({
     Home: {
@@ -95,6 +96,10 @@ const DrawerNavigator = createDrawerNavigator({
 const AppContainer = createAppContainer(DrawerNavigator);
 
 export default class App extends Component {
+    componentDidMount(){
+        StatusBar.setBackgroundColor(colors.theme)
+        StatusBar.setBarStyle('dark-content')
+    }
     render() {
         return <AppContainer />;
     }

@@ -5,7 +5,7 @@ import {
     RefreshControl, FlatList
 } from 'react-native';
 //file
-// import { StatusBarCommon } from '../../common/component/statusbar'
+import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
 import { HomeHeader } from './component'
 import { Images } from '../../image';
@@ -71,26 +71,22 @@ export class HomeScreen extends Component {
         }, 2000)
     }
     render() {
-        const iconAppArr = [
+        let iconAppArr = [
             { icon: Images.home.ic_home_1, name: '外卖' },
             { icon: Images.home.ic_home_2, name: '美食' },
             { icon: Images.home.ic_home_3, name: '咖啡' },
             { icon: Images.home.ic_home_4, name: '休闲' },
-            { icon: Images.home.ic_home_9, name: '买药' },
-            { icon: Images.home.ic_home_6, name: '西餐' },
             { icon: Images.home.ic_home_5, name: '甜品' },
-            { icon: Images.home.ic_home_8, name: '旅游' },
+            { icon: Images.home.ic_home_6, name: '西餐' },
             { icon: Images.home.ic_home_7, name: '优选' },
-            { icon: Images.home.ic_home_10, name: '团好货' },
-            { icon: Images.home.ic_home_6, name: '西餐' },
-            { icon: Images.home.ic_home_5, name: '甜品' },
             { icon: Images.home.ic_home_8, name: '旅游' },
-            { icon: Images.home.ic_home_9, name: '玩乐' },
-            { icon: Images.home.ic_home_10, name: '团好货' },
+            { icon: Images.home.ic_home_9, name: '买药' },
+            { icon: Images.home.ic_home_10, name: '团好货' }
         ]
+        iconAppArr = iconAppArr.concat(iconAppArr).concat(iconAppArr)
         let pageArr = []
-        for (let i = 0; i < iconAppArr.length; i += 12) {
-            pageArr.push(iconAppArr.slice(i, i + 12))
+        for (let i = 0; i < iconAppArr.length; i += 15) {
+            pageArr.push(iconAppArr.slice(i, i + 15))
         }
 
         const iconArr = [
@@ -127,7 +123,7 @@ export class HomeScreen extends Component {
                                 backgroundColor: colors.theme,
                                 width: SCREEN_WIDTH
                             }}>
-                                <FourView data={iconArr} col={4}/>
+                                <FourView data={iconArr} col={4} />
                             </View>
                             <SwiperView data={pageArr} />
                             <Animated.View style={{

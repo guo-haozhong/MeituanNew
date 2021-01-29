@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
 //lib
-import { Image, Header } from 'react-native-elements';
+import { Image } from 'react-native-elements';
 //file
 import { colors } from '../../common/theme/color';
 import { Images } from '../../image';
 import { FourView, ColView } from '../home/component/HookView'
 import { Layout } from './component/HookView'
+import Header from '../../common/component/header'
+
+
 const iconArr = [
     { icon: Images.mine.icon_h1, name: '收藏' },
     { icon: Images.mine.icon_h2, name: '评价' },
@@ -57,7 +60,7 @@ export class MineScreen extends Component {
     }
     handleScroll = (e) => {
         let { y } = e.nativeEvent.contentOffset
-        console.log('y==' + y);
+        // console.log('y==' + y);
     }
     render() {
         let intep = this.state.scrollY.interpolate({
@@ -71,7 +74,6 @@ export class MineScreen extends Component {
         return (
             <View style={styles.constain}>
                 <HeaderWithName {...this.props} name={'hozan'} opacity={intep} />
-                {/* <DefalutHeader {...this.props} opacity={intep1} /> */}
                 <Animated.ScrollView
                     onScroll={Animated.event([{
                         nativeEvent: { contentOffset: { y: this.state.scrollY, } }
@@ -99,17 +101,15 @@ function HeaderWithName(props) {
     return (
         <Animated.View>
             <Header
-                statusBarProps={{ barStyle: 'dark-content', backgroundColor: colors.theme }}
                 containerStyle={{
-                    backgroundColor: colors.theme,
-                    borderBottomColor: colors.theme
+                    backgroundColor: colors.theme
                 }}
                 leftComponent={<View />}
                 centerComponent={
                     <Animated.View style={{ opacity: props.opacity }}>
                         <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#333' }}>{props.name}</Text>
                     </Animated.View>}
-                rightComponent={<View style={{ flexDirection: 'row', alignItems: 'center', }}>
+                rightComponent={<View style={styles.rightView}>
                     <Image source={Images.mine.icon_mine1} style={[styles.img]} />
                     <Image source={Images.mine.icon_mine2} style={[styles.img, { marginLeft: 15, marginRight: 10 }]} />
                 </View>} />
@@ -226,5 +226,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: SCREEN_WIDTH
+    },
+    rightView: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: "flex-end",//row-控制水平
+        alignItems: 'center',
+        marginRight:10
     }
 })

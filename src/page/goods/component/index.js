@@ -2,18 +2,17 @@ import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StatusBarCommon } from '../../../common/component/statusbar'
 import { colors } from '../../../common/theme/color';
-import { Button, Image, Header, SearchBar, Tooltip } from 'react-native-elements';
+import { Button, Image, SearchBar, Tooltip } from 'react-native-elements';
 import { Images } from '../../../image';
+import Header from '../../../common/component/header'
 
 //首页-头部
 const GoodHeader = class extends Component {
     render() {
         return (
             <Header
-                statusBarProps={{ barStyle: 'dark-content', backgroundColor: colors.theme }}
                 containerStyle={{
-                    backgroundColor: colors.theme,
-                    borderBottomColor: colors.theme
+                    backgroundColor: colors.theme
                 }}
                 leftComponent={<LeftComponent />}
                 centerComponent={<View />}
@@ -25,8 +24,8 @@ const LeftComponent = class extends Component {
     render() {
         return (
             <View style={{
-                width: 100, marginLeft: 10,
-                alignItems: 'center', justifyContent: 'center'
+                flex: 1, marginLeft: 20,
+                justifyContent: 'center'
             }}>
                 <Text style={{
                     color: colors.textColor, fontSize: 24,
@@ -49,7 +48,7 @@ const RightComponent = class extends Component {
     render() {
         const { search } = this.state;
         return (
-            <TouchableOpacity onPress={()=>{alert('input')}}>
+            <TouchableOpacity onPress={() => { alert('input') }} style={{}}>
                 <SearchBar
                     editable={false}
                     placeholder="输入商品名"
@@ -57,8 +56,9 @@ const RightComponent = class extends Component {
                         backgroundColor: 'transparent',
                         borderBottomColor: 'transparent',
                         borderTopColor: 'transparent',
-                        width: 140,
+                        width: 160,
                         padding: 0,
+
                     }}
                     inputContainerStyle={{
                         backgroundColor: '#f5f5f5',

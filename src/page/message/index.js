@@ -2,8 +2,9 @@ import React, { Component, useState, useEffect } from 'react';
 import { View, Text, Button, StyleSheet, FlatList, TouchableWithoutFeedback } from 'react-native';
 import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
-import { Image, Header } from 'react-native-elements';
+import { Image } from 'react-native-elements';
 import { Images } from '../../image';
+import Header from '../../common/component/header'
 export class MessageScreen extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
@@ -14,10 +15,8 @@ export class MessageScreen extends Component {
         return (
             <View style={styles.contain}>
                 <Header
-                    statusBarProps={{ barStyle: 'dark-content', backgroundColor: colors.theme }}
                     containerStyle={{
-                        backgroundColor: colors.theme,
-                        borderBottomColor: colors.theme
+                        backgroundColor: colors.theme
                     }}
                     leftComponent={<View />}
                     centerComponent={
@@ -27,7 +26,10 @@ export class MessageScreen extends Component {
                                 fontWeight: 'bold'
                             }}>消息</Text>
                         </View>}
-                    rightComponent={<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    rightComponent={<View style={{
+                        flex: 1, marginRight: 15,
+                        alignItems: 'flex-end', justifyContent: 'center'
+                    }}>
                         <Text>清除未读</Text>
                     </View>} />
                 <ListView {...this.props} />
