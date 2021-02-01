@@ -107,6 +107,7 @@ export class HomeScreen extends Component {
                 {/* <StatusBarCommon barStyle={"dark-content"} backgroundColor={colors.theme} /> */}
                 <HomeHeader />
                 <Animated.FlatList
+                    style={{ backgroundColor: colors.theme, flex: 1 }}
                     data={[]}
                     refreshControl={
                         <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} colors={colors.refreshColor} />
@@ -118,7 +119,7 @@ export class HomeScreen extends Component {
                     scrollEventThrottle={1}
                     showsVerticalScrollIndicator={false}
                     ListHeaderComponent={
-                        <View>
+                        <View style={{ backgroundColor: colors.bgColorfa }}>
                             <View style={{
                                 backgroundColor: colors.theme,
                                 width: SCREEN_WIDTH
@@ -129,7 +130,6 @@ export class HomeScreen extends Component {
                             <Animated.View style={{
                                 flex: 1,
                                 width: SCREEN_WIDTH,
-                                // backgroundColor: "#fff",
                             }}>
                                 <TabView
                                     style={{}}

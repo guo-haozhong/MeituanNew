@@ -82,6 +82,7 @@ export class GoodsScreen extends Component {
                 <GoodHeader />
                 <Animated.FlatList
                     data={[]}
+                    style={{ backgroundColor: colors.theme, flex: 1 }}
                     refreshControl={
                         <RefreshControl refreshing={refreshing} onRefresh={this.onRefresh} colors={colors.refreshColor} />
                     }
@@ -92,7 +93,7 @@ export class GoodsScreen extends Component {
                     scrollEventThrottle={1}
                     showsVerticalScrollIndicator={false}
                     ListHeaderComponent={
-                        <View>
+                        <View style={{backgroundColor:colors.bgColorfa,flex:1}}>
                             <View style={{ height: 100, backgroundColor: colors.theme }}></View>
                             <ScrollViewList {...this.props} />
 

@@ -75,20 +75,23 @@ export class MineScreen extends Component {
             <View style={styles.constain}>
                 <HeaderWithName {...this.props} name={'hozan'} opacity={intep} />
                 <Animated.ScrollView
+                    style={{ backgroundColor: colors.theme }}
                     onScroll={Animated.event([{
                         nativeEvent: { contentOffset: { y: this.state.scrollY, } }
                     }], { useNativeDriver: true, listener: this.handleScroll })}
                     scrollEventThrottle={1}
                     showsVerticalScrollIndicator={false}>
-                    <UserView data={iconArr} />
-                    <View style={{
-                        backgroundColor: '#fff', marginHorizontal: 10, borderRadius: 10, top: -20
-                    }}>
-                        <ColView data={iconArr1} col={5} width={SCREEN_WIDTH - 40} isLimitheight={true} />
+                    <View style={{ backgroundColor: colors.bgColorfa }}>
+                        <UserView data={iconArr} />
+                        <View style={{
+                            backgroundColor: '#fff', marginHorizontal: 10, borderRadius: 10, top: -20
+                        }}>
+                            <ColView data={iconArr1} col={5} width={SCREEN_WIDTH - 40} isLimitheight={true} />
+                        </View>
+                        <ContentView1 />
+                        <ContentView2 data={iconArr2} />
+                        <ContentView3 data={iconArr3} />
                     </View>
-                    <ContentView1 />
-                    <ContentView2 data={iconArr2} />
-                    <ContentView3 data={iconArr3} />
 
                 </Animated.ScrollView>
             </View>
@@ -109,10 +112,11 @@ function HeaderWithName(props) {
                     <Animated.View style={{ opacity: props.opacity }}>
                         <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#333' }}>{props.name}</Text>
                     </Animated.View>}
-                rightComponent={<View style={styles.rightView}>
-                    <Image source={Images.mine.icon_mine1} style={[styles.img]} />
-                    <Image source={Images.mine.icon_mine2} style={[styles.img, { marginLeft: 15, marginRight: 10 }]} />
-                </View>} />
+                rightComponent={
+                    <View style={styles.rightView}>
+                        <Image source={Images.mine.icon_mine1} style={[styles.img]} />
+                        <Image source={Images.mine.icon_mine2} style={[styles.img, { marginLeft: 15, marginRight: 10 }]} />
+                    </View>} />
         </Animated.View>
     )
 }
@@ -232,6 +236,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "flex-end",//row-控制水平
         alignItems: 'center',
-        marginRight:10
+        marginRight: 10
     }
 })
