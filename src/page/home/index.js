@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {
     View, Text, StyleSheet,
-    Animated, Dimensions, StatusBar,
+    Animated, Dimensions, TouchableWithoutFeedback,
     RefreshControl, FlatList
 } from 'react-native';
 //file
 import { StatusBarCommon } from '../../common/component/statusbar'
 import { colors } from '../../common/theme/color';
-import { HomeHeader } from './component'
+import { HomeHeader, ModalView } from './component'
 import { Images } from '../../image';
 import { FourView, SwiperView } from './component/HookView'
 import { FirstRoute } from './component/tabview/FirstRoute'
@@ -31,7 +31,8 @@ export class HomeScreen extends Component {
             ],
             scrollY: new Animated.Value(0),
             tabColor: colors.bgColorfa,
-            refreshing: false
+            refreshing: false,
+            visible: false
         }
     }
     static navigationOptions = ({ navigation }) => {
@@ -70,6 +71,11 @@ export class HomeScreen extends Component {
             })
         }, 2000)
     }
+    _onAdd = () => {
+        // this.setState({
+        //     visible: !this.state.visible
+        // })
+    }
     render() {
         let iconAppArr = [
             { icon: Images.home.ic_home_1, name: '外卖' },
@@ -96,7 +102,7 @@ export class HomeScreen extends Component {
             { icon: Images.home.ic_chuxing, name: '出行' }
         ]
 
-        const { index, routes, tabColor, refreshing } = this.state
+        const { index, routes, tabColor, refreshing, visible } = this.state
         const renderScene = SceneMap({
             first: FirstRoute,
             second: SecondRoute,
@@ -105,7 +111,7 @@ export class HomeScreen extends Component {
         return (
             <View style={styles.container}>
                 {/* <StatusBarCommon barStyle={"dark-content"} backgroundColor={colors.theme} /> */}
-                <HomeHeader />
+                <HomeHeader onAdd={this._onAdd} />
                 <Animated.FlatList
                     style={{ backgroundColor: colors.theme, flex: 1 }}
                     data={[]}
@@ -160,6 +166,7 @@ export class HomeScreen extends Component {
                             </Animated.View>
                         </View>} >
                 </Animated.FlatList>
+                {/* <ModalView visible={visible} /> */}
             </View>
         );
     }

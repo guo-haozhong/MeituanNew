@@ -8,8 +8,8 @@ import {
 
 export default class StickyHeader extends Component {
   static propTypes = {
-    stickyHeaderY: PropTypes.number,
-    stickyScrollY: PropTypes.any
+    stickyHeaderY: PropTypes.number,//滑动到多少悬浮-固定值
+    stickyScrollY: PropTypes.any    //滚动距离
   }
   static defaultProps = {
     stickyHeaderY: -1,
@@ -39,6 +39,7 @@ export default class StickyHeader extends Component {
       inputRange: [-1, 0, y, y + 1],
       outputRange: [0, 0, 0, 1],
     });
+
     return (
       <Animated.View
         onLayout={this._onLayout}

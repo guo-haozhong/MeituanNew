@@ -6,7 +6,7 @@ import { Image } from 'react-native-elements';
 import { colors } from '../../common/theme/color';
 import { Images } from '../../image';
 import { FourView, ColView } from '../home/component/HookView'
-import { Layout } from './component/HookView'
+import { Layout, TipView, ColMineView } from './component/HookView'
 import Header from '../../common/component/header'
 
 
@@ -147,11 +147,26 @@ function UserView(props) {
 }
 //我的钱包
 function ContentView1(props) {
+    const data = [{ title: '1个', desc: '这是描述', tip: "说明" },
+    { title: '1个', desc: '这是描述', tip: "说明" },
+    { title: '1个', desc: '这是描述', tip: "说明" },
+    { title: '1个', desc: '这是描述', tip: "说明" }]
     return (
         <Layout style={{ top: -10 }}>
-            <View style={{ height: 160, }}>
-
-            </View>
+            <TipView
+                leftComponent={
+                    <Text style={[styles.text_14]}>我的钱包</Text>
+                }
+                rightComponent={
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={{
+                            fontSize: 13,
+                            color: colors.textColor333,
+                        }}> 进入钱包</Text>
+                        <Image source={Images.good.ic_arrow_right} style={{ width: 12, height: 12 }} />
+                    </View>
+                } />
+            <ColMineView data={data} col={4} width={SCREEN_WIDTH - 40} />
         </Layout>
     )
 }

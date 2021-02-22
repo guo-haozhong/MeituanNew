@@ -8,12 +8,13 @@ import Header from '../../../common/component/header'
 //首页-头部
 const HomeHeader = class extends Component {
     render() {
+        const {onAdd}=this.props
         return (
             <Header
                 containerStyle={{ backgroundColor: colors.theme }}
                 leftComponent={<LeftComponent />}
                 centerComponent={<CenterComponent />}
-                rightComponent={<RightComponent />}
+                rightComponent={<RightComponent onAdd={onAdd}/>}
             />
         )
     }
@@ -21,7 +22,7 @@ const HomeHeader = class extends Component {
 function LeftComponent() {
     return (
         <View style={[styles.flexStyle, { marginLeft: 5 }]}>
-            <Text style={{color:colors.textColor333,fontSize:14,fontWeight:"bold"}}>广州</Text>
+            <Text style={{ color: colors.textColor333, fontSize: 14, fontWeight: "bold" }}>广州</Text>
             <Image source={Images.home.ic_arrow_down}
                 style={{ width: 14, height: 8, marginLeft: 5 }} />
         </View>
@@ -56,8 +57,21 @@ function CenterComponent() {
     )
 }
 //this.tooltipRef = React.createRef();//v17 新写法
-function RightComponent() {
-    const tooltipRef = useRef(null);
+function RightComponent(props) {
+    // const tooltipRef = useRef(null);
+    const {onAdd}=props
+    return (
+        <View style={styles.flexStyle}>
+            <Image source={Images.home.ic_yuyin}
+                style={{ width: 25, height: 25, marginRight: 10 }} />
+            <TouchableOpacity onPress={()=>{onAdd()}}>
+                <Image source={Images.home.ic_add}
+                    style={{ width: 24, height: 24 }} />
+            </TouchableOpacity>
+        </View>
+    )
+}
+function ModalView(props) {
     const arr = [
         {
             name: "扫一扫",
@@ -70,48 +84,38 @@ function RightComponent() {
             isline: false
         }
     ]
-
+    const { visible } = props
     return (
-        <View style={styles.flexStyle}>
-            <Image source={Images.home.ic_yuyin}
-                style={{ width: 25, height: 25, marginRight:10 }} />
-            <Tooltip
-                ref={tooltipRef}
-                backgroundColor={colors.gray}
-                containerStyle={{ borderRadius: 5, height: 100 }}
-                overlayColor={'transparent'}
-                toggleOnPress={true}
-                popover={
-                    <View style={{ backgroundColor: colors.gray, flex: 1, width: 120, height: 100 }}>
-                        {
-                            arr.map((item, index) => {
-                                return (
-                                    <TouchableOpacity
-                                        style={{ flex: 1, flexDirection: 'column' }} key={index}
-                                        onPress={() => {
-                                            alert(item.name)
-                                            tooltipRef && tooltipRef.current.toggleTooltip();
-                                        }}>
-                                        <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'center', alignItems: 'center', width: 120 }}>
-                                            <Image source={item.icon} style={{ width: 20, height: 20 }} />
-                                            <Text style={[styles.text_white, { marginLeft: 10 }]}>{item.name}</Text>
-                                        </View>
-                                        {item.isline ? (<View style={styles.line_white}></View>) : null}
-                                    </TouchableOpacity>
-                                )
-                            })
-                        }
-                    </View>
-                }>
-                <Image source={Images.home.ic_add}
-                    style={{ width: 24, height: 24 }} />
-            </Tooltip>
-
-        </View>
+        visible ? (
+            <View style={{
+                backgroundColor: colors.gray,
+                position: 'absolute', right: 10, top: 50,
+                width: 120, height: 100
+            }}>
+                {
+                    arr.map((item, index) => {
+                        return (
+                            <TouchableOpacity
+                                style={{ flex: 1, flexDirection: 'column' }} key={index}
+                                onPress={() => {
+                                    alert(item.name)
+                                }}>
+                                <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'center', alignItems: 'center', width: 120 }}>
+                                    <Image source={item.icon} style={{ width: 20, height: 20 }} />
+                                    <Text style={[styles.text_white, { marginLeft: 10 }]}>{item.name}</Text>
+                                </View>
+                                {item.isline ? (<View style={styles.line_white}></View>) : null}
+                            </TouchableOpacity>
+                        )
+                    })
+                }
+            </View>
+        ) : null
     )
 }
 export {
-    HomeHeader
+    HomeHeader,
+    ModalView
 }
 
 const styles = StyleSheet.create({
