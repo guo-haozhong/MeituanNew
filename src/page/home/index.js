@@ -132,7 +132,7 @@ export class HomeScreen extends Component {
                             }}>
                                 <FourView data={iconArr} col={4} />
                             </View>
-                            <SwiperView data={pageArr} />
+                            <SwiperView data={pageArr} {...this.props}/>
                             <Animated.View style={{
                                 flex: 1,
                                 width: SCREEN_WIDTH,
