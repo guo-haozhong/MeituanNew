@@ -8,7 +8,7 @@ global.SCREEN_WIDTH =screenUtils.SCREEN_WIDTH
 global.SCREEN_HEIGHT = screenUtils.SCREEN_HEIGHT
 
 // iOS系统
-global.iOS = screenUtils.iOS
+global.IOS = screenUtils.IOS
 // Android系统
 global.Android = screenUtils.Android
 // iPhone X/XR/XS/XSM
