@@ -2,7 +2,7 @@
 
 ## 一、编译运行
 
-* 因为有写库的最新版本引入了Android QX，所以运行安卓端需进行迁移：
+* 因为有些库的最新版本引入了AndroidX，所以运行安卓端需进行迁移：
 
 调用npx jetify将所有node_modules迁移到AndroidX，如下所示：
 
