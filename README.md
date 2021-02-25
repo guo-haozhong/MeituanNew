@@ -16,9 +16,9 @@ $ npx jetify
 
 ## 三、部分组件使用
 
-* [Drawer抽屉组件]: https://github.com/rnc-archive/react-native-drawer-layout
+[Drawer抽屉组件]: https://github.com/rnc-archive/react-native-drawer-layout
 
-  该组件来源于react-native-drawer-layout
+该组件来源于react-native-drawer-layout
 
 ```
 import DrawerLayout from '../../common/component/drawer'
