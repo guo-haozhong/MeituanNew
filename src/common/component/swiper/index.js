@@ -81,7 +81,7 @@ export default class SwiperView extends PureComponent {
       // 默认返回true。目前暂时只支持android。
       return true;
     },
-    onPanResponderTerminationRequest: (evt, gestureState) => true,
+    onPanResponderTerminationRequest: (evt, gestureState) => false,
 
     onPanResponderGrant: (evt, gestureState) => {
       // 用户手指触碰屏幕，停止动画
@@ -161,6 +161,6 @@ const styles = StyleSheet.create({
     flex:1,
     overflow: 'hidden',
     flexDirection: 'row',
-    marginBottom:10
+    // marginBottom:10
   }
 })
