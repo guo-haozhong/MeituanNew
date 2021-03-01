@@ -1,21 +1,27 @@
 import * as type from '../actionsTypes/index'
+import { XStorage } from 'react-native-easy-app'
+import { AsyncStorage } from 'react-native'
 
-const initialAuthState = {
+export const LoginInfo = {
     status: "未登录",
     isLogin: false,
     user: {},
 };
-
-export const login = function (state = initialAuthState, action) {
+export const login = function (state = LoginInfo, action) {
     switch (action.type) {
         case type.LOGINING:
-            console.log('111111');
+
             return {
                 ...state,
                 status: "登录中",
                 isLogin: false,
             };
         case type.LOGIN_SUCCESS:
+            XStorage.initStorage(LoginInfo, AsyncStorage, () => {
+                LoginInfo.status = "登陆成功"
+                LoginInfo.isLogin = true
+                LoginInfo.user = JSON.stringify(action.state)
+            });
             return {
                 ...state,
                 status: "登陆成功",
@@ -33,7 +39,7 @@ export const login = function (state = initialAuthState, action) {
                 ...state,
                 status: "未登录",
                 isLogin: false,
-                user:{}
+                user: {}
             };
         default:
             return state;

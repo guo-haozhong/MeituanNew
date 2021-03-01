@@ -40,7 +40,6 @@ export default class App extends Component {
         //退出应用
         if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
             //最近2秒内按过back键，可以退出应用。
-            console.log('最近2秒内按过back键');
             return false;
         }
 

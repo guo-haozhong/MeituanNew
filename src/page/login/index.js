@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button,AsyncStorage } from 'react-native'
 import * as actions from '../../redux/actions/LoginAction'
+import {LoginInfo} from '../../redux/reducers/loginReducer'
+import { XStorage } from 'react-native-easy-app'
 class Login extends Component {
+    componentDidMount(){
+        XStorage.initStorage(LoginInfo, AsyncStorage, () => {
+            console.log(LoginInfo.user);
+        });
+    }
     componentWillUnmount() {
         // this.props.loginOut()
     }
@@ -12,7 +19,6 @@ class Login extends Component {
                 <Text>{this.props.status}</Text>
                 <Text>{JSON.stringify(this.props.user)}</Text>
                 <Button title={'登录'} onPress={() => {
-                    // alert('login')
                     this.props.login('hozan', '123')
                 }} />
             </View>
