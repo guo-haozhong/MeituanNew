@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "postinstall": "jetifier -r",
     "jetify": "npx jetify",
-    "apk":"cd android && ./gradlew assembleRelease",
+    "apk": "cd android && ./gradlew assembleRelease",
     "bundle-android": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform android --dev false --bundle-output ./android/app/src/main/assets/index.android.jsbundle --assets-dest  ./android/app/src/main/assets/",
     "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/index.jsbundle --assets-dest ./ios/bundle"
   },
@@ -36,12 +36,13 @@
     "react-native-webview": "^5.12.1",
     "react-navigation": "^4.4.3",
     "react-navigation-drawer": "^2.6.0",
+    "react-navigation-redux-helpers": "^4.0.1",
     "react-navigation-stack": "^2.10.2",
     "react-navigation-tabs": "^2.10.1",
     "react-redux": "5.1.1",
-    "redux": "4.0.1",
-    "redux-logger": "3.0.6",
-    "redux-thunk": "2.3.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "rn-fetch-blob": "^0.12.0"
   },
   "devDependencies": {

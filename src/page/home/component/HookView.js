@@ -73,7 +73,7 @@ export function SwiperView(props) {
                                     <TouchableWithoutFeedback
                                         key={index}
                                         onPress={() => {
-                                            props.navigation.navigate('swiper')
+                                            props.navigation.navigate('Detail')
                                         }}>
                                         <View style={[styles.commonItemView, { width: (SCREEN_WIDTH - 20) / 5 }]}>
                                             <Image source={item.icon} style={{ width: 30, height: 30 }} />

@@ -14,6 +14,9 @@ import { FirstRoute } from './component/tabview/FirstRoute'
 import { SecondRoute } from './component/tabview/SecondRoute'
 import { ThirdRoute } from './component/tabview/ThirdRoute'
 import StickyHeader from '../../common/component/stickyheader'
+
+import { ReduxActions } from '../../common/utils/reduxUtil'
+
 //lib
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
@@ -35,6 +38,18 @@ export class HomeScreen extends Component {
             visible: false
         }
     }
+    componentDidMount() {
+        this.testredux()
+    }
+
+    testredux = () => {
+        const userInfo = {
+            username: 'Hozan',
+            psd: '123456'
+        }
+        // alert(JSON.stringify(this.props))
+    }
+
     static navigationOptions = ({ navigation }) => {
         return {
             title: navigation.getParam('title', '首页'),
@@ -72,6 +87,7 @@ export class HomeScreen extends Component {
         }, 2000)
     }
     _onAdd = () => {
+     
         // this.setState({
         //     visible: !this.state.visible
         // })
@@ -132,7 +148,7 @@ export class HomeScreen extends Component {
                             }}>
                                 <FourView data={iconArr} col={4} />
                             </View>
-                            <SwiperView data={pageArr} {...this.props}/>
+                            <SwiperView data={pageArr} {...this.props} />
                             <Animated.View style={{
                                 flex: 1,
                                 width: SCREEN_WIDTH,
