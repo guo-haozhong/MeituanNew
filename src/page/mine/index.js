@@ -44,7 +44,7 @@ const iconArr3 = [
     { icon: Images.home.ic_home_1, name: '充电宝加盟' },
     { icon: Images.home.ic_home_1, name: '美团大学' }
 ]
-export class MineScreen extends Component {
+export default class MineScreen extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             title: navigation.getParam('title', '我的'),

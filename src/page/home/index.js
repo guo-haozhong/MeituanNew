@@ -22,7 +22,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 //constant
 const initialLayout = { width: Dimensions.get('window').width };
-export class HomeScreen extends Component {
+export default class HomeScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {

@@ -16,7 +16,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 //constant
 const initialLayout = { width: Dimensions.get('window').width };
-export class GoodsScreen extends Component {
+export default class GoodsScreen extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             title: navigation.getParam('title', '省钱好货'),

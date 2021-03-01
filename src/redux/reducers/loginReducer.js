@@ -2,36 +2,38 @@ import * as type from '../actionsTypes/index'
 
 const initialAuthState = {
     status: "未登录",
-    isLoggedIn: false,
+    isLogin: false,
     user: {},
 };
 
 export const login = function (state = initialAuthState, action) {
     switch (action.type) {
         case type.LOGINING:
+            console.log('111111');
             return {
                 ...state,
                 status: "登录中",
-                isLoggedIn: false,
+                isLogin: false,
             };
         case type.LOGIN_SUCCESS:
             return {
                 ...state,
                 status: "登陆成功",
-                isLoggedIn: true,
-                user: {name: "张三", age: 24}
+                isLogin: true,
+                user: action.state
             };
         case type.LOGIN_ERROR:
             return {
                 ...state,
                 status: "登录失败",
-                isLoggedIn: false
+                isLogin: false
             };
         case type.LOGOUT:
             return {
                 ...state,
                 status: "未登录",
-                isLoggedIn: false
+                isLogin: false,
+                user:{}
             };
         default:
             return state;

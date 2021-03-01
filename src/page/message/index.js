@@ -5,7 +5,7 @@ import { colors } from '../../common/theme/color';
 import { Image } from 'react-native-elements';
 import { Images } from '../../image';
 import Header from '../../common/component/header'
-export class MessageScreen extends Component {
+export default class MessageScreen extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             title: navigation.getParam('title', '消息'),
