@@ -9,7 +9,7 @@ const timeout = 30000 //超时设置
 
 const defaultConfig = {
     baseURL: HOST,
-    timeout: 30000,
+    timeout: timeout,
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
         'User-Agent': Platform.OS === 'android' ? 'Android' : 'IOS'

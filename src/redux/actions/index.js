@@ -1,4 +1,3 @@
-
 import * as actionType from '../actionsTypes/index'
 
 // 设置用户信息

@@ -7,7 +7,7 @@ import { Images } from '../../image';
 export class MyCustomTaBar extends Component {
 
     render() {
-        console.log(JSON.stringify(this.props));
+        // console.log(JSON.stringify(this.props));
         const { state } = this.props.navigation
         state.routes.forEach((e, index) => {
             if (state.index == index) {
