@@ -6,12 +6,12 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
 //TabBottom页面
-import  HomeScreen  from '../page/home'
-import  MessageScreen  from '../page/message'
-import  GoodsScreen  from '../page/goods'
-import  MineScreen  from '../page/mine'
+import HomeScreen from '../page/home'
+import MessageScreen from '../page/message'
+import GoodsScreen from '../page/goods'
+import MineScreen from '../page/mine'
 //home
-import  DetailScreen  from '../page/home/Detail/index'
+import DetailScreen from '../page/home/Detail/index'
 import Login from '../page/login'
 //其他页面
 import { SwiperScreen } from '../page/others/swiper/SwiperScreen'

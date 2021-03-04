@@ -7,11 +7,16 @@ import { XStorage } from 'react-native-easy-app'
 class Login extends Component {
     componentDidMount(){
         XStorage.initStorage(LoginInfo, AsyncStorage, () => {
-            console.log(LoginInfo.user);
+            alert(JSON.stringify(LoginInfo))
         });
     }
     componentWillUnmount() {
         // this.props.loginOut()
+        XStorage.initStorage(LoginInfo, AsyncStorage, () => {
+            LoginInfo.isLogin=false
+            LoginInfo.status='未登录'
+            LoginInfo.user={}
+        });
     }
     render() {
         return (
