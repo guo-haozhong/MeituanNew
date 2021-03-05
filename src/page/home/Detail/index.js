@@ -6,8 +6,7 @@ import {
 } from 'react-native'
 
 import { connect } from 'react-redux'
-import { getDetail, getUserInfo, uploadImage } from '../../../service/fetch/index'
-import { getDetail, getUserInfo } from '../../../service/axios/index'
+
 class DetailScreen extends Component {
     componentWillUnmount() {
         
